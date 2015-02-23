@@ -7,3 +7,20 @@
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
+
+<section ng-app="profilesModule">
+	<div ng-controller='ProfileController'>
+		<ul>
+			<li ng-repeat='profile in profiles'>
+				{{ profile.name }}
+			</li>
+		</ul>
+		<p>{{hello}}</p>
+	</div>
+</section>
+
+<!-- <section ng-app="profilesModule">
+	<div ng-controller='HelloController as hello'>
+		<input type='text' ng-model='hello.name' /> {{ name }}
+	</div>
+</section> -->
