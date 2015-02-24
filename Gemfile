@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'ng-rails-csrf'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
