@@ -25,6 +25,8 @@ gem 'active_model_serializers'
 
 gem 'angularjs-rails-resource'
 
+gem 'bower-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
