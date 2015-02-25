@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular/angular
+//= require ng-helpers
 //= require angularjs/rails/resource
+//= require profile
 //= require_tree .

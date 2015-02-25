@@ -5,17 +5,15 @@
   <%= @profile.name %>
 </p>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
 
 <section ng-app="profilesModule">
-	<div ng-controller='ProfileController'>
+	<div ng-controller='ProfileController as profiles'>
 		<ul>
-			<li ng-repeat='profile in profiles'>
-				{{ profile.name }}
-			</li>
+			<input type='text' ng-model='profiles.profile.name' />
+			<button ng-click="profiles.update()" >Update Profile</button>
 		</ul>
-		<p>{{hello}}</p>
+		<p>{{profiles.hello}}</p>
 	</div>
 </section>
 

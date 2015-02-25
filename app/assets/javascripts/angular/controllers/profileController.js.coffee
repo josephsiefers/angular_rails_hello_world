@@ -1,22 +1,35 @@
-profilesModule = angular.module('profilesModule', ['rails']);
+# profilesModule.controller('ProfileController', ($scope, Profile) ->
+# 	$scope.profiles = [{id: 'test'}];
+# 	$scope.hello = "hello!";
 
-# profilesModule.factory "Profile", ($resource) ->
-# 	return $resource('/api/v1/profiles:id', {id: @id} );
+# 	#$scope.profiles = Profile.query();
 
-profilesModule.factory("Profile", ($http, RailsResource) ->
-	class Profile extends RailsResource
-		@configure url: '/api/v1/profiles', name: "profile"
-)
+# 	Profile.query().then( (results) ->
+# 		#$scope.profiles = results
+# 		$scope.profile = results[0]
+# 		$scope.searching = false
+# 	)
 
-profilesModule.controller('ProfileController', ($scope, Profile) ->
-	$scope.profiles = [{id: 'test'}];
-	$scope.hello = "hello!";
+# 	$scope.updateProfile = ->
+# 		$scope.profile.update()
+# )
 
-	#$scope.profiles = Profile.query();
+class ProfileController extends @NGController
+	@register window.profilesModule
 
-	Profile.query().then( (results) ->
-		$scope.profiles = results
-		$scope.searching = false
-	)
-)
+	@$inject: [
+		'$scope',
+		'Profile'
+	]
 
+	init: ->
+		@hello = 'hello1'
+		@loadProfiles()
+
+	loadProfiles: ->
+		@Profile.query().then( (results) =>
+			@profile = results[0]
+		)	
+
+	update: ->
+		@profile.update()
