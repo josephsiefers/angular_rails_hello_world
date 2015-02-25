@@ -1,9 +1,9 @@
-profilesModule = angular.module('profilesModule')
+#profilesModule = angular.module('profilesModule')
 
-profilesModule.controller("HelloController", ($scope) ->
-	$scope.name = "Test!";
+	#profilesModule.controller("HelloController", ($scope) ->
+	#	$scope.name = "Test!";
 	#console.log('In the controller!');
-)
+#)
 
 
 # helloController($scope)->
