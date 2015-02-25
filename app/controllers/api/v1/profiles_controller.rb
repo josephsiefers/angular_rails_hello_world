@@ -4,4 +4,18 @@ class Api::V1::ProfilesController < ApplicationController
 
   	render json: @profiles, root: false
   end
+
+  def update
+  	@profile = Profile.find(params[:id])
+
+    if @profile.update(profile_params)
+      render json: @profile
+    else
+      render json: {}, status: :unprocessable_entity 
+    end
+  end
+
+  def profile_params
+  	params.require(:profile).permit(:name)
+  end
 end
