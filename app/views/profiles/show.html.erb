@@ -9,11 +9,16 @@
 
 <section ng-app="profilesModule">
 	<div ng-controller='ProfileController as profiles'>
-		<ul>
-			<input type='text' ng-model='profiles.profile.name' />
-			<button ng-click="profiles.update()" >Update Profile</button>
-		</ul>
-		<p>{{profiles.hello}}</p>
+		<input type='text' ng-model='profiles.profile.name' />
+		<br/>
+		<input type='text' ng-model='profiles.profile.user.email' />
+			<!--<ul>
+				<li ng-repeat="employmentRecord in profiles.profile.employmentRecords">
+					<input type='text' ng-model='employmentRecord.title' />
+				</li>
+			</ul> -->
+		<br/>
+		<button ng-click="profiles.update()" >Update Profile</button>
 	</div>
 </section>
 
