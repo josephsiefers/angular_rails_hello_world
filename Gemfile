@@ -25,7 +25,7 @@ gem 'angularjs-rails-resource'
 
 gem 'bower-rails'
 
-gem 'factory_girl'
+gem 'factory_girl_rails'
 
 gem 'rspec-rails'
 
