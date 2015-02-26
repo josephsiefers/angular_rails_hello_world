@@ -80,13 +80,13 @@ describe Api::V1::ProfilesController do
 		end
 
 		describe "nested employer attributes" do
-			# it "creates a new employer if one does not exist" do
-			# 	profile = create(:profile)
+			it "creates a new employer if one does not exist" do
+				profile = create(:profile)
 
-			# 	expect { 
-			# 		put :update, { id: profile.id, profile: { id: profile.id, name: profile.name, employment_records_attributes: { "0" => { id: nil, title: "slave", employer_attributes: {name: "Test"} } } } }
-			# 	}.to change { Employer.count }
-			# end
+				expect { 
+					put :update, { id: profile.id, profile: { id: profile.id, name: profile.name, employment_records_attributes: { "0" => { id: nil, title: "slave", employer_attributes: {name: "Test"} } } } }
+				}.to change { Employer.count }
+			end
 
 			it "doesn't allow a new employer to be created with the same name" do
 				profile = create(:profile)
