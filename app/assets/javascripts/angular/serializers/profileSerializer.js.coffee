@@ -1,6 +1,7 @@
 profilesModule.factory('ProfileSerializer', (railsSerializer) ->
 	railsSerializer(->
 		@nestedAttribute('user')
-		#nestedAttribute('employment_records')
+		@nestedAttribute('employmentRecords')
+		@serializeWith('employmentRecords', 'EmploymentRecordSerializer')
 	)
 );

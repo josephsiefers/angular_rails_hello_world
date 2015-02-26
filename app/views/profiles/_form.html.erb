@@ -14,6 +14,13 @@
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
+
+    <%= f.fields_for :employment_records do |employment_record_form| %>
+      <%= employment_record_form.fields_for :employer do |employer_form| %>
+        <%= employer_form.text_field :name %>
+      <% end %>
+    <% end %>
+
   </div>
   <div class="actions">
     <%= f.submit %>

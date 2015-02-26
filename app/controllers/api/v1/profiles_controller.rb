@@ -16,6 +16,6 @@ class Api::V1::ProfilesController < ApplicationController
   end
 
   def profile_params
-  	params.require(:profile).permit(:name, user_attributes: [:email])
+  	params.require(:profile).permit(:name, user_attributes: [:email], employment_records_attributes: [:id, :title, :employer_id, employer_attributes: :name])
   end
 end
